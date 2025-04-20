@@ -5,11 +5,13 @@ import styles from "./HeroHeader.styles.js";
 import BackendSection from "./BackendSection.js";
 import FrontendSection from "./FrontendSection.js";
 import HeroImage from "./HeroImage.js";
+import useIsMobile from "../../hooks/useIsMobile.js";
 
 function HeroHeader() {
   const [show, setShow] = useState(false);
   const [mouseX, setMouseX] = useState(0.5);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -20,6 +22,11 @@ function HeroHeader() {
   }, [location.pathname]);
 
   useEffect(() => {
+    if (isMobile) {
+      setMouseX(0.5); 
+      return;
+    }
+
     function handleMouseMove(e) {
       const value = e.clientX / window.innerWidth;
       setMouseX(value);
@@ -27,7 +34,7 @@ function HeroHeader() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   return (
     <section className={styles.header}>

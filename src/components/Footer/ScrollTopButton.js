@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpCircle } from "lucide-react";
 
+import styles from "./Footer.styles.js";
+import { scrollToTop } from "../../utils/scrollToTop.js";
+
 function ScrollTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,13 +23,6 @@ function ScrollTopButton() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   const arrowVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -47,7 +43,7 @@ function ScrollTopButton() {
           whileHover="hover"
           whileTap="tap"
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 z-10 cursor-pointer rounded-full bg-white/70 shadow-md transition-all duration-300 flex items-center justify-center w-10 h-10"
+          className={styles.scrollTopAnimatiuon}
           title="Scroll to Top"
         >
           <ArrowUpCircle className="w-6 h-6 text-black" />

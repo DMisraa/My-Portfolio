@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import CV from "../../assets/Daniel_Menahem_CV.pdf";
 import styles from "./Navbar.styles.js";
 import DropdownMenu from "./DropdownResumeMenu.js";
+import { scrollToTop } from "../../utils/scrollToTop.js";
 
 function ResumeMenu({ onClose }) {
 
-  function handleViewResumeOnClick(setOpen) {
-    onClose()
+  function handleViewResumeOnClick(setOpen) {   
     setOpen(false)
+    scrollToTop()
+    
+    if (onclose) {
+      onClose()
+   }
   }
 
   return (
@@ -32,7 +37,7 @@ function ResumeMenu({ onClose }) {
           <a
             href={CV}
             download
-            className={styles.dropdownItem}
+            className={styles.dropdownItem} 
             onClick={() => setOpen(false)}
           >
             Download Resume

@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+
 import styles from "./Navbar.styles.js";
+import { scrollToTop } from "../../utils/scrollToTop.js";
 
 function NavItem({ href, children, variant, onClose }) {
+  function handleClick() {
+    onClose();
+    scrollToTop()
+  }
+
   const isExternalLink =
     href.startsWith("http://") || href.startsWith("https://");
 
@@ -14,7 +21,7 @@ function NavItem({ href, children, variant, onClose }) {
         className={linkClass}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={onClose}
+        onClick={handleClick}
       >
         {children}
       </a>
@@ -22,7 +29,7 @@ function NavItem({ href, children, variant, onClose }) {
   }
 
   return (
-    <Link to={href} className={linkClass} onClick={onClose}>
+    <Link to={href} className={linkClass} onClick={handleClick}>
       {children}
     </Link>
   );

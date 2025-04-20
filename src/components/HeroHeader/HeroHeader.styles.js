@@ -1,4 +1,4 @@
-const header = "relative bg-white py-16 overflow-hidden";
+const header = "relative bg-white pt-16 pb-4 overflow-hidden";
 const bgSplash = "absolute inset-0 pointer-events-none z-0";
 const leftSplash =
   "absolute top-1/4 left-0 w-[40%] h-[60%] rounded-full blur-3xl transition-all duration-500";

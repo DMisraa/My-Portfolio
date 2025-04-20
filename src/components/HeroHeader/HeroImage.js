@@ -1,16 +1,16 @@
 import { Link } from "react-router";
-import useIsMobile from "../../hooks/useIsMobile.js"; // Import the custom hook
+import useIsMobile from "../../hooks/useIsMobile.js"; 
 import styles from "./HeroHeader.styles.js";
 import logo from "../../assets/logo.png";
 
 function HeroImage({ mouseX, show }) {
-  const isMobile = useIsMobile(); // Get the mobile state using the custom hook
+  const isMobile = useIsMobile(); 
 
   return (
     <div
       className={styles.imageWrapper}
       style={{
-        transform: `translateX(${isMobile ? (0.5 - mouseX) * 60 : (-0.15 - mouseX) * 60}px) scale(${show ? 1 : 0.75})`,
+        transform: `translateX(${isMobile ? (0.5 - mouseX) * 60 : (0 - mouseX) * 60}px) scale(${show ? 1 : 0.75})`,
         opacity: show ? 1 : 0,
         transition: "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease",
       }}

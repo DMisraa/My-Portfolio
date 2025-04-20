@@ -1,4 +1,4 @@
-const section = "py-20 bg-gradient-to-b from-white to-[#eef1f7]";
+const section = "py-12 md:py-16 bg-gradient-to-b from-white to-[#eef1f7]";
 const wrapper = "max-w-6xl mx-auto px-4 text-center";
 const heading = "text-sm tracking-widest text-gray-500 uppercase mb-12";
 const grid = "grid gap-10 sm:grid-cols-1 md:grid-cols-2 justify-items-center";

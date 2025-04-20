@@ -40,7 +40,7 @@ const mobileMenuContent = "p-6";
 
 const mobileSocialLinks = "mt-4 flex flex-col gap-4";
 
-const mobileDropdownMenu = "absolute left-1/2 ml-36 top-0 w-40 -translate-x-1/2 bg-white border border-gray-200 rounded-md shadow-lg z-50";
+const mobileDropdownMenu = "absolute left-1/2 top-0 w-40 -translate-x-1/2 bg-white border border-gray-200 rounded-md shadow-lg z-50 mt-9 sm:mt-0 sm:ml-36 ";
 
 const mobileMenuTopRow = "flex justify-around items-center mb-6";
 
