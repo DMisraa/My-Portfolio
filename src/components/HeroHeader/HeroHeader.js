@@ -40,22 +40,25 @@ function HeroHeader() {
     <section className={styles.header}>
       {/* Background Splashes */}
       <div className={styles.bgSplash}>
-        <div
-          className={styles.leftSplash}
-          style={{
-            background: "radial-gradient(circle at center, #8b5cf6, transparent 70%)",
-            opacity: 1 - mouseX,
-            transform: `translateX(-30%) scale(${1 + (1 - mouseX) * 0.3})`,
-          }}
-        />
-        <div
-          className={styles.rightSplash}
-          style={{
-            background: "radial-gradient(circle at center, #60a5fa, transparent 70%)",
-            opacity: mouseX,
-            transform: `translateX(30%) scale(${1 + mouseX * 0.3})`,
-          }}
-        />
+      <div
+      className={styles.leftSplash}
+      style={{
+        background: "radial-gradient(circle at center, #8b5cf6, transparent 70%)",
+        opacity: 1 - mouseX,
+        transform: `translateX(-30%) scale(${1 + (1 - mouseX) * 0.3})`,
+        transition: "opacity 0.3s ease, transform 0.3s ease", 
+      }}
+    />
+    <div
+      className={styles.rightSplash}
+      style={{
+        background: "radial-gradient(circle at center, #60a5fa, transparent 70%)",
+        opacity: mouseX,
+        transform: `translateX(30%) scale(${1 + mouseX * 0.3})`,
+        transition: "opacity 0.3s ease, transform 0.3s ease", 
+      }}
+    />
+    
       </div>
    
         <div className={styles.contentWrapper}>
