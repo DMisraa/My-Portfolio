@@ -11,7 +11,7 @@ function ResumeMenu({ onClose }) {
     setOpen(false)
     scrollToTop()
     
-    if (onclose) {
+    if (onClose) {
       onClose()
    }
   }

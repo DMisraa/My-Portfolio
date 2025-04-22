@@ -14,7 +14,7 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   function toggleMobileMenu() {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((prev) => !prev);
   }
 
   return (
@@ -49,4 +49,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
